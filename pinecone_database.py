@@ -1,9 +1,6 @@
 from llama_index.vector_stores import PineconeVectorStore
-from llama_index import StorageContext, GPTVectorStoreIndex, VectorStoreIndex
-from dotenv import load_dotenv
+from llama_index import StorageContext, VectorStoreIndex
 from config import PINECONE_INDEX, PINECONE_ENVIRONMENT
-
-load_dotenv()
 
 
 def get_pinecone_index():
@@ -20,6 +17,5 @@ def get_pinecone_storage_context():
 def get_vector_store():
     return PineconeVectorStore(
         index_name=PINECONE_INDEX,
-        environment=PINECONE_ENVIRONMENT,
-        # metadata_filters=metadata_filters
+        environment=PINECONE_ENVIRONMENT
     )

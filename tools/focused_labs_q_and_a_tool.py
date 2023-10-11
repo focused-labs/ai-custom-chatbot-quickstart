@@ -32,7 +32,6 @@ def create_vector_db_tool(llm: ChatOpenAI):
     return RetrievalQA.from_chain_type(
         llm=llm,
         chain_type="stuff",
-        return_source_documents=True,
         input_key="question",
         retriever=vectorstore.as_retriever(search_kwargs={"k": 3})
     )

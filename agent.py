@@ -31,9 +31,6 @@ class Agent:
                                                                   verbose=True,
                                                                   max_iterations=3,
                                                                   handle_parsing_errors=True,
-                                                                  memory=memory,
-                                                                  input_variables=["input", "chat_history",
-                                                                                   "agent_scratchpad"],
                                                                   system_message=
                                                                   f"""
                                                                   Have a conversation with a human, answering the 
@@ -55,8 +52,7 @@ class Agent:
                 return response
             return f"""
             {{
-                "result": "{response}",
-                "sources": []
+                "result": "{response}"
             }}"""
 
         except ValueError as e:

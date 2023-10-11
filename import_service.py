@@ -1,9 +1,12 @@
-from langchain.chat_models import ChatOpenAI
+from dotenv import load_dotenv
 
+from langchain.chat_models import ChatOpenAI
 from llama_index import VectorStoreIndex, download_loader, LLMPredictor, ServiceContext
 
 from config import CHAT_MODEL
 from pinecone_database import get_pinecone_storage_context
+
+load_dotenv()
 
 
 def get_llm_predictor():
