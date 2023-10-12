@@ -118,6 +118,9 @@ You’ll receive an answer from the database.
 
 Ok, you can retrieve data from the database. But what happens when a user asks unrelated questions like "who are you?"We need to add an agent. You can think of agents as the brain behind deciding what tool to use. Sometimes, you need to query the database. Sometimes you don't. The agent decides.
 
+Here is an update to our Overview diagram showing the agent.
+![Overview with agent Diagram](./Overview-withAgent.png)
+
 1. Start the app: `python3 main.py`
 2. Send a `POST` **request to the endpoint `/ask-agent` with the following body:
 
