@@ -64,7 +64,7 @@ This developer kit contains a loader for scraping a website. This is located in 
 
 ```json
 {
-page_urls: [""]
+  "page_urls": [""]
 }
 ```
 
@@ -72,7 +72,7 @@ Example:
 
 ```json
 {
-  page_urls: [
+  "page_urls": [
     "https://focusedlabs.io",
     "https://focusedlabs.io/about",
     "https://focusedlabs.io/contact",
@@ -99,7 +99,7 @@ Starting with the bare minimum. First, we'll make sure we can query the database
 
 ```json
 {
-"text": ""
+  "text": ""
 }
 ```
 
@@ -107,7 +107,7 @@ Example:
 
 ```json
 {
-"text": "What solutions did Focused Labs provide for Hertz?"
+  "text": "What solutions did Focused Labs provide for Hertz?"
 }
 ```
 
@@ -126,7 +126,7 @@ Here is an update to our Overview diagram showing the agent.
 
 ```json
 {
-"text": ""
+  "text": ""
 }
 ```
 
@@ -134,7 +134,7 @@ Example:
 
 ```json
 {
-"text": "Who are you?"
+  "text": "Who are you?"
 }
 ```
 
