@@ -1,25 +1,50 @@
-# Focused Labs Developer Kit · Getting Started · The Basics/Bare Minimum
+# AI Domain Specific Chatbot Toolkit
 
-## Hello
+## Use Case
 
-This tutorial shows you how to run a sample custom AI chatbot. The tutorial covers The Basics or the bare minimum.
+This tutorial shows you how to get started building a custom chatbot using our preferred LLM tech stack: 
+- OpenAI
+- Langchain
+- LlamaHub Loaders
+- Pinecone vector DB
+- Python (FastAPI web framework)
 
-## Objectives
+### What we aim to do 
+
+- Demonstrate how to add custom domain knowledge to an LLM model (we're using gpt-3.5-turbo). 
+- Share our learnings with other developers looking to become familiar with the LLM tech stack
+- Demonstrate a conversational memory LLM chatbot
+- Demonstrate how to retrieve and persist metadata in the form of document citations/sources in a Pinecone vector database
+- Demonstrate using agents and tools with the Langchain Framework
+
+### Why? 
+
+Domain specific AI chatbots can be used in the following ways:
+
+- Virtual Assistants
+- Knowledge retrieval
+- Text synthesis
+- Text formatting 
+- Sentiment analysis
+- And many, many more... 
+
+
+## Technical Objectives
 
 - Ingest data into a vector database
 - Query the vector database
-- Query an agent that decides whether or not to query the vector database
+- Query an agent that decides whether to query the vector database
 
-## Overview
+## Architecture Overview
 
 ![Overview Diagram](./Overview.png)
 
 ## Prerequisites
 
-1. A Pinecone Vector Database. You can create a free account [at Pinecone's website](https://www.pinecone.io/).
-2. An Open AI API account. You can sign up [at Open AI's website](https://platform.openai.com/signup).
+1. Pinecone Vector Database. You can create a free account [at Pinecone's website](https://www.pinecone.io/).
+2. Open AI API account. You can sign up [at Open AI's website](https://platform.openai.com/signup).
 3. Python (and your favorite IDE). We are using python v3.10.7.
-4. Your favorite API client tool (our favorite is Postman, or you can use CLI curl)
+4. Your favorite API client tool (we used Postman, but you can also use [curl](https://github.com/curl/curl))
 
 ## Set up your environment
 
@@ -116,9 +141,9 @@ You’ll receive an answer from the database.
 
 ### Query an agent
 
-Ok, you can retrieve data from the database. But what happens when a user asks unrelated questions like "who are you?"We need to add an agent. You can think of agents as the brain behind deciding what tool to use. Sometimes, you need to query the database. Sometimes you don't. The agent decides.
+Ok, you can retrieve data from the database. But what happens when a user asks unrelated questions like "who are you?" We need to add an agent. You can think of agents as the brain behind deciding what tool to use. Sometimes, you need to query the database. Sometimes you don't. The agent decides.
 
-Here is an update to our Overview diagram showing the agent.
+Here is an update to our Architecture Overview diagram showing the agent.
 ![Overview with agent Diagram](./Overview-withAgent.png)
 
 1. Start the app: `python3 main.py`
