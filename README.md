@@ -5,29 +5,26 @@
 This tutorial shows you how to get started building a custom chatbot using our preferred LLM tech stack: 
 - OpenAI
 - Langchain
-- LlamaHub Loaders
-- Pinecone vector DB
+- Llama Hub Loaders
+- Pinecone Vector DB
 - Python (FastAPI web framework)
 
-### What we aim to do 
+### Purpose
 
-- Demonstrate how to add custom domain knowledge to an LLM model (we're using gpt-3.5-turbo). 
+- Demonstrate how to add custom domain knowledge to an LLM model (we're using gpt-3.5-turbo) 
 - Share our learnings with other developers looking to become familiar with the LLM tech stack
 - Demonstrate a conversational memory LLM chatbot
-- Demonstrate how to retrieve and persist metadata in the form of document citations/sources in a Pinecone vector database
 - Demonstrate using agents and tools with the Langchain Framework
 
 ### Why? 
 
-Domain specific AI chatbots can be used in the following ways:
+Domain specific AI chatbots can be used in some of the following ways:
 
 - Virtual Assistants
 - Knowledge retrieval
 - Text synthesis
 - Text formatting 
 - Sentiment analysis
-- And many, many more... 
-
 
 ## Technical Objectives
 
