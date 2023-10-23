@@ -21,7 +21,7 @@ def format_quotes_in_json(str):
     return str.replace('"', '\\"').replace("\n", "\\n")
 
 
-def transform_source_docs(result):
+def transform_to_json(result):
     formatted_result_string = format_quotes_in_json(result["result"])
     return f"""
         {{

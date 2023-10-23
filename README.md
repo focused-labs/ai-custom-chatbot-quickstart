@@ -1,29 +1,30 @@
 # AI Domain Specific Chatbot Toolkit
 
-## Use Case
-
-This tutorial shows you how to get started building a custom chatbot using our preferred LLM tech stack: 
+This tutorial shows you how to get started building a custom chatbot using our preferred LLM tech stack:
 - OpenAI
 - Langchain
 - Llama Hub Loaders
-- Pinecone Vector DB
+- Pinecone Vector Database
 - Python (FastAPI web framework)
 
-### Purpose
+We are leveraging Retrieval Augmented Generation (RAG). RAG is one of the techniques to enrich your LLM with custom knowledge. 
 
-- Demonstrate how to add custom domain knowledge to an LLM model (we're using gpt-3.5-turbo) 
-- Share our learnings with other developers looking to become familiar with the LLM tech stack
+For more resources: check out [our blog posts on AI](focusedlabs.io/ai).
+
+### Goals
+
+- Demonstrate how to add custom data to an LLM model (we're using OpenAI's gpt-3.5-turbo)
 - Demonstrate a conversational memory LLM chatbot
 - Demonstrate using agents and tools with the Langchain Framework
 
-### Why? 
+### Why?
 
 Domain specific AI chatbots can be used in some of the following ways:
 
 - Virtual Assistants
 - Knowledge retrieval
 - Text synthesis
-- Text formatting 
+- Text formatting
 - Sentiment analysis
 
 ## Technical Objectives
@@ -53,15 +54,19 @@ If you receive the message “Hello World”, you are good to go 🎉
 
 ## Ingesting Data
 
+We leverage Llama Hub loaders to facilitate our ETL process. These loaders handle the tokenization and embedding for us. 
+These loaders leverage Open AI's embedding model for the translations to a vector. 
+
+For more information on how Open AI's embedding model works, [here's a good starting point](https://platform.openai.com/docs/guides/embeddings/what-are-embeddings).
 
 
 ### Set up Infrastructure
 
-We recommend setting up a Pinecone vector database. Many awesome vector databases exist, but Pinecone is an industry favorite. Pinecone is a native vector database which increases the accuracy of search results. The database is managed and provides a dashboard out of the box.
+We recommend setting up a Pinecone vector database. Many awesome vector databases exist, but Pinecone is a great starting point. Pinecone is a native vector database which increases the accuracy of search results. The database is managed and provides a dashboard out of the box.
 
 1. **Set up your vector database**
     - Create an index, give it a name.
-    - The index dimension is 1536. This is the number of output dimensions from Open AI's embedding model *`*text-embedding-ada-002*`*. [Source](https://platform.openai.com/docs/guides/embeddings/what-are-embeddings)    **
+    - The index dimension is 1536. This is the number of output dimensions from Open AI's embedding model *`*text-embedding-ada-002*`*. [Source](https://platform.openai.com/docs/guides/embeddings/what-are-embeddings)   
 2. **************************************Update environment variables**************************************
 - Create a `.env` file that contains the following:
 

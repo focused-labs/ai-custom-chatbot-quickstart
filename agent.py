@@ -5,7 +5,7 @@ from langchain.memory import ConversationBufferWindowMemory
 
 from config import CHAT_MODEL
 from tools.focused_labs_q_and_a_tool import create_vector_db_tool
-from utils import is_answer_formatted_in_json, output_response, transform_source_docs
+from utils import is_answer_formatted_in_json, output_response, transform_to_json
 
 
 class Agent:
@@ -74,4 +74,4 @@ class Agent:
 
 def _parse_source_docs(q_and_a_tool: RetrievalQA, query: str):
     result = q_and_a_tool({"question": query})
-    return transform_source_docs(result)
+    return transform_to_json(result)
