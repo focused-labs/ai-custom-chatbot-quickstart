@@ -1,4 +1,4 @@
-# AI Domain Specific Chatbot Toolkit
+# AI Custom Chatbot Quickstart
 
 This tutorial shows you how to get started building a custom chatbot using our preferred LLM tech stack:
 - OpenAI
