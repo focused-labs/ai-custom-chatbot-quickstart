@@ -9,7 +9,7 @@ This tutorial shows you how to get started building a custom chatbot using our p
 
 We are leveraging Retrieval Augmented Generation (RAG). RAG is one of the techniques to enrich your LLM with custom knowledge. 
 
-For more resources: check out [our blog posts on AI](focusedlabs.io/ai).
+For more resources: check out [our blog posts on AI](https://focusedlabs.io/ai).
 
 ### Goals
 
