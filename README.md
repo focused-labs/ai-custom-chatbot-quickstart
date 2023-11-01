@@ -1,4 +1,4 @@
-# AI Custom Chatbot Quickstart
+# AI Custom Chatbot Quickstart · The Basics
 
 This tutorial shows you how to get started building a custom chatbot using our preferred LLM tech stack:
 - OpenAI
@@ -171,3 +171,4 @@ You’ll receive an answer from the agent.
 ## FAQ
 
 - If you run into a *`*PermissionError: [Errno 13] Permission denied:*`* then make sure you are running your app with Python3
+- If you run into a *`*MaxRetryError...Caused by SSLError*`* when you are uploading your data to the vector database, wait another 5 minutes for your index to fully initialize and try again.
