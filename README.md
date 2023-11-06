@@ -1,11 +1,25 @@
 # AI Custom Chatbot Quickstart · The Basics
 
+## Table of Contents
+1. [AI Custom Chatbot Quickstart · The Basics](#ai-custom-chatbot-quickstart--the-basics)
+2. [Goals](#goals)
+3. [Architecture Overview](#architecture-overview)
+4. [Prerequisites](#prerequisites)
+5. [Set up your environment](#set-up-your-environment)
+6. [Ingesting Data](#ingesting-data)
+   - [Set up Infrastructure](#set-up-infrastructure)
+   - [Run App](#run-app)
+7. [Query Data](#query-data)
+   - [Search the Database](#search-the-database)
+   - [Query an agent](#query-an-agent)
+8. [FAQ](#faq)
+
 This tutorial shows you how to get started building a custom chatbot using our preferred LLM tech stack:
-- OpenAI
-- Langchain
-- Llama Hub Loaders
-- Pinecone Vector Database
-- Python (FastAPI web framework)
+- [OpenAI](https://openai.com/)
+- [Langchain](https://python.langchain.com/docs/get_started/introduction)
+- [Llama Hub Data Loaders](https://llamahub.ai/)
+- [Pinecone Vector Database](https://pinecone.io/)
+- Python [(FastAPI web framework)](https://fastapi.tiangolo.com/)
 
 We are leveraging Retrieval Augmented Generation (RAG). RAG is one of the techniques to enrich your LLM with custom knowledge. 
 
@@ -38,11 +52,13 @@ Domain specific AI chatbots can be used in some of the following ways:
 ![Overview Diagram](./Overview.png)
 
 ## Prerequisites
-
-1. Pinecone Vector Database. You can create a free account [at Pinecone's website](https://www.pinecone.io/).
-2. Open AI API account. You can sign up [at Open AI's website](https://platform.openai.com/signup).
-3. Python (and your favorite IDE). We are using python v3.10.7.
-4. Your favorite API client tool (we used Postman, but you can also use [curl](https://github.com/curl/curl))
+1. Clone this repository. 
+   Or branch it if you want to make your own edits. 
+2. Pinecone Vector Database. You can create a free account [at Pinecone's website](https://www.pinecone.io/).
+3. Open AI API account. You can sign up [at Open AI's website](https://platform.openai.com/signup). 
+   - You will need to add a payment method to your account [here](https://platform.openai.com/account/billing/overview).
+4. Python (and your favorite IDE). We are using python v3.10.7.
+5. Your favorite API client tool (we used Postman, but you can also use [curl](https://github.com/curl/curl))
 
 ## Set up your environment
 
@@ -63,21 +79,21 @@ For more information on how Open AI's embedding model works, [here's a good star
 ### Set up Infrastructure
 
 We recommend setting up a Pinecone vector database. Many awesome vector databases exist, but Pinecone is a great starting point. Pinecone is a native vector database which increases the accuracy of search results. The database is managed and provides a dashboard out of the box.
-
-1. **Set up your vector database**
+1. Follow the [Prerequisites](#prerequisites) steps if you haven't already.
+2. **Set up your vector database**
     - Create an index, give it a name.
     - The index dimension is 1536. This is the number of output dimensions from Open AI's embedding model *`*text-embedding-ada-002*`*. [Source](https://platform.openai.com/docs/guides/embeddings/what-are-embeddings)   
-2. **************************************Update environment variables**************************************
+3. **************************************Update environment variables**************************************
 - Create a `.env` file that contains the following:
 
-```markdown
+```
 OPENAI_API_KEY=<insert OpenAI API key>
 PINECONE_API_KEY=<insert Pinecone API Key>
 ```
 
 - **In the *`*config.py*`* file, you will need to update Pinecone information
 
-```markdown
+```
 PINECONE_INDEX=<name of your index>
 PINECONE_ENVIRONMENT=<name of your pinecone environment, ex: asia-southeast1-gcp-free>
 ```
@@ -170,5 +186,6 @@ You’ll receive an answer from the agent.
 
 ## FAQ
 
-- If you run into a *`*PermissionError: [Errno 13] Permission denied:*`* then make sure you are running your app with Python3
-- If you run into a *`*MaxRetryError...Caused by SSLError*`* when you are uploading your data to the vector database, wait another 5 minutes for your index to fully initialize and try again.
+- If you run into a *`Rate Limit Error`*, you need to make sure your [OpenAI account](https://platform.openai.com/account/billing/overview) has credit available. 
+- If you run into a *`PermissionError: [Errno 13] Permission denied:`* then make sure you are running your app with Python3
+- If you run into a *`MaxRetryError...Caused by SSLError`* when you are uploading your data to the vector database, wait another 5 minutes for your index to fully initialize and try again.
